@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BrightLearn – Data Engineering Project Scope</title>
+  <style>
+    @page { margin: 2.5cm; }
+    body {
+      font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      color: #1a1a1a;
+      margin: 50px 90px;
+      line-height: 1.5;
+      background: #fff;
+    }
+    .letterhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 3px solid #1A3A6B;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .company-name {
+      font-size: 22pt;
+      font-weight: bold;
+      color: #1A3A6B;
+      letter-spacing: 1px;
+    }
+    .company-sub {
+      font-size: 9pt;
+      color: #555;
+      margin-top: 2px;
+    }
+    .doc-ref {
+      font-size: 9pt;
+      color: #555;
+      text-align: right;
+    }
+    .doc-title {
+      background-color: #1A3A6B;
+      color: #ffffff;
+      font-size: 14pt;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px 0;
+      letter-spacing: 0.5px;
+      margin: 18px 0 6px 0;
+    }
+    .doc-subtitle {
+      background-color: #D6E4F0;
+      font-size: 10pt;
+      font-weight: bold;
+      text-align: center;
+      padding: 5px 0;
+      margin-bottom: 20px;
+      color: #1A3A6B;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 22px;
+      font-size: 10pt;
+    }
+    .meta-table td {
+      border: 1px solid #B0BEC5;
+      padding: 5px 10px;
+    }
+    .meta-table td:first-child {
+      font-weight: bold;
+      background-color: #EBF1F8;
+      width: 170px;
+      color: #1A3A6B;
+    }
+    h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #1A3A6B;
+      border-bottom: 1.5px solid #1A3A6B;
+      padding-bottom: 3px;
+      margin-top: 28px;
+    }
+    h3 {
+      font-size: 11pt;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px 0;
+      font-size: 10pt;
+    }
+    table.data-table th {
+      background-color: #1A3A6B;
+      color: #fff;
+      padding: 6px 8px;
+      text-align: left;
+      font-weight: bold;
+    }
+    table.data-table td {
+      border: 1px solid #B0BEC5;
+      padding: 5px 8px;
+      vertical-align: top;
+    }
+    table.data-table tr:nth-child(even) td {
+      background-color: #F5F9FF;
+    }
+    ul { margin: 6px 0 10px 0; padding-left: 20px; }
+    ul li { margin-bottom: 4px; }
+    ol { margin: 6px 0 10px 0; padding-left: 20px; }
+    ol li { margin-bottom: 6px; }
+    .important-box {
+      border: 1.5px solid #C62828;
+      background-color: #FFF3E0;
+      padding: 10px 14px;
+      margin: 14px 0;
+      font-size: 10.5pt;
+    }
+    .important-box strong { color: #C62828; }
+    .info-box {
+      border-left: 4px solid #1A3A6B;
+      background-color: #EBF1F8;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 10.5pt;
+    }
+    .signature-section {
+      margin-top: 40px;
+      border-top: 2px solid #1A3A6B;
+      padding-top: 20px;
+    }
+    .sig-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    .sig-block {
+      flex: 1;
+      min-width: 200px;
+    }
+    .sig-line {
+      border-top: 1px solid #000;
+      margin-top: 30px;
+      padding-top: 4px;
+      font-size: 10pt;
+    }
+    .footer {
+      margin-top: 40px;
+      border-top: 1px solid #B0BEC5;
+      padding-top: 8px;
+      font-size: 8.5pt;
+      color: #777;
+      text-align: center;
+    }
+    .confidential-stamp {
+      color: #B71C1C;
+      font-weight: bold;
+      font-size: 10pt;
+      text-align: right;
+      margin-bottom: 4px;
+    }
+    .question-num {
+      font-weight: bold;
+      color: #1A3A6B;
+    }
+    .scope-boundary {
+      border: 1px solid #B0BEC5;
+      padding: 10px 16px;
+      margin: 12px 0;
+    }
+    .scope-boundary h3 {
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- LETTERHEAD -->
+<div class="letterhead">
+  <div>
+    <div class="company-name">BrightLearn</div>
+    <div class="company-sub">Technology & Data Division | Johannesburg, South Africa</div>
+  </div>
+  <div class="doc-ref">
+    <div class="confidential-stamp">CONFIDENTIAL — INTERNAL USE ONLY</div>
+    <div>Document Ref: BL-DE-EXAM-2026-07</div>
+    <div>Issue Date: 27 June 2026</div>
+    <div>Classification: Restricted</div>
+  </div>
+</div>
+
+<!-- TITLE BLOCK -->
+<div class="doc-title">PROJECT SCOPE DOCUMENT &amp; TECHNICAL ASSIGNMENT</div>
+<div class="doc-subtitle">Data Engineering Team — Assessment | Issued by: Technology &amp; Data Division | BrightLearn</div>
+
+<!-- DOCUMENT METADATA -->
+<table class="meta-table">
+  <tr><td>Project Name</td><td>BrightLearn Data Warehouse Build</td></tr>
+  <tr><td>Project Code</td><td>BL-DE-EXAM-2026-07</td></tr>
+  <tr><td>Requesting Department</td><td>Business Intelligence &amp; Analytics</td></tr>
+  <tr><td>Business Analyst</td><td>Lerato, Business Analyst</td></tr>
+  <tr><td>Technical Sponsor</td><td>Ketro Sithole, Head of Data Engineering</td></tr>
+  <tr><td>Assigned To</td><td>Data Engineering Candidate (Individual Assignment)</td></tr>
+  <tr><td>Assignment Start Date</td><td>1 July 2026</td></tr>
+  <tr><td>Final Submission Deadline</td><td><strong>Sunday, 21 July 2026 — 23:59 SAST</strong></td></tr>
+  <tr><td>Document Status</td><td>FINAL — Approved for Release</td></tr>
+</table>
+
+<!-- SECTION 1 -->
+<h2>1. Company Background</h2>
+<p>
+BrightLearn is a South African retail chain operating five stores across the country. The business sells
+products across five categories: Groceries, Electronics, Clothing, Home &amp; Kitchen, and Beauty &amp;
+Personal Care. BrightLearn operates a customer loyalty programme with three tiers — Bronze, Silver,
+and Gold — which rewards repeat purchases.
+</p>
+<p>
+BrightLearn's five stores are located in Sandton (Gauteng), Cape Town (Western Cape), Umhlanga
+(KwaZulu-Natal), Pretoria (Gauteng), and Gqeberha (Eastern Cape). Each store runs its own
+point-of-sale (POS) system, which records all customer transactions.
+</p>
+
+<!-- SECTION 2 -->
+<h2>2. Business Problem</h2>
+<p>
+The Business Intelligence team has been unable to produce any meaningful reports for the senior
+leadership team because BrightMart's transactional data has never been properly organised or stored
+in a queryable format.
+</p>
+<p>
+Currently, the POS system exports all sales data as a single flat file. This file contains all transaction
+details, customer details, product details, and store details mixed together in one table — with no
+normalisation, no consistent formatting, and known data quality issues that have accumulated over
+time.
+</p>
+<p>
+The Chief Executive Officer (CEO), Rofhiwa, has escalated this as a business-critical issue.
+Without a functional data warehouse, BrightLearn cannot make data-driven decisions about inventory,
+customer retention, or store performance.
+</p>
+
+<div class="important-box">
+  <strong>CRITICAL:</strong> This is a real business problem with real consequences. The BI team is blocked.
+  Leadership is waiting. This assignment simulates the exact environment you will encounter
+  as a professional Data Engineer. Your deliverables must be production-quality.
+</div>
+
+<!-- SECTION 3 -->
+<h2>3. Source Data</h2>
+<p>
+You have been provided with <strong>one CSV file</strong>:
+</p>
+<div class="info-box">
+  <strong>File name:</strong> <code>BrightLearn_Raw_Data.csv</code><br />
+  <strong>Location:</strong> <code>data/BrightLearn_Raw_Data.csv</code><br />
+  <strong>Description:</strong> A single flat, denormalised export from the BrightMart POS system,
+  covering sales transactions from January 2026 to June 2026. All entity data (customers, products,
+  stores, transactions) is mixed into one file. One row represents one product line item within a transaction.
+</div>
+<p>
+This file is the <strong>only data source</strong> you are permitted to use. You may not supplement it with
+any other data. You must work with what you have been given, including its imperfections.
+</p>
+
+<div class="important-box">
+  <strong>WARNING:</strong> The source data contains known and unknown data quality issues. It is your
+  responsibility as the Data Engineer to identify, document, and handle all anomalies before loading
+  data into the warehouse. The business cannot trust reports built on dirty data.
+</div>
+
+<!-- SECTION 4 -->
+<h2>4. Business Requirements — Questions That Must Be Answered</h2>
+<p>
+The following questions have been raised by business stakeholders and must be answerable by
+running queries against your completed data warehouse. You are not required to build dashboards —
+only to ensure the data is structured correctly so that these questions can be answered with SQL.
+</p>
+
+<table class="data-table">
+  <tr>
+    <th style="width:60px;">Ref</th>
+    <th>Business Question</th>
+    <th style="width:140px;">Raised By</th>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-01</td>
+    <td>What were the top 5 best-selling products by total revenue between January and June 2026?</td>
+    <td>Thabo Nkosi, Head of Merchandising</td>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-02</td>
+    <td>What was the total revenue per store, broken down by month, for the January–June 2026 period?</td>
+    <td>Johan van der Merwe, Regional Manager</td>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-03</td>
+    <td>What is the month-over-month revenue growth rate across all stores combined?</td>
+    <td>Rofhiwa, CEO</td>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-04</td>
+    <td>Who are the top 10 loyalty customers ranked by total spend over the reporting period?</td>
+    <td>Priya Govender, Loyalty Programme Manager</td>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-05</td>
+    <td>Which registered loyalty customers have not made a purchase since 28 April 2026? These customers must be flagged for a targeted win-back campaign.</td>
+    <td>Priya Govender, Loyalty Programme Manager</td>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-06</td>
+    <td>What is the average transaction value broken down by customer loyalty tier (Bronze, Silver, Gold)?</td>
+    <td>Priya Govender, Loyalty Programme Manager</td>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-07</td>
+    <td>What is the total quantity sold per product category, per store, for the reporting period?</td>
+    <td>Thabo Nkosi, Head of Merchandising</td>
+  </tr>
+  <tr>
+    <td class="question-num">BQ-08</td>
+    <td>Based on the June 2026 inventory snapshot embedded in the source data, which store-product combinations currently have stock levels below their reorder threshold?</td>
+    <td>Thabo Nkosi, Head of Merchandising</td>
+  </tr>
+</table>
+
+<!-- SECTION 5 -->
+<h2>5. Scope of Work — What You Must Deliver</h2>
+<p>
+You are required to design and build a complete data engineering solution. The deliverables are
+defined below. <strong>How you achieve them is your decision.</strong> You must make all technical,
+architectural, and data quality decisions independently.
+</p>
+
+<div class="scope-boundary">
+  <h3>5.1 GitHub Repository</h3>
+  <ul>
+    <li>Create a public GitHub repository named: <code>brightlearn-de-exam-[yourfirstname]-[yourlastname]</code></li>
+    <li>All code, scripts, documentation, and screenshots must be committed to this repository</li>
+    <li>Your commit history will be reviewed — you must have a minimum of <strong>one commit per working day</strong></li>
+    <li>Commit messages must be meaningful and descriptive. Generic messages ("update", "final", "done") will result in mark deductions</li>
+    <li>The repository must be accessible to your facilitator by the submission deadline</li>
+    <li>Your <code>README.md</code> must explain what your project does and the order in which scripts should be run</li>
+  </ul>
+</div>
+
+<div class="scope-boundary">
+  <h3>5.2 SQL Server Database (SSMS)</h3>
+  <ul>
+    <li>Design and create a <strong>normalised relational database</strong> in SQL Server to store the BrightLearn data</li>
+    <li>The database must support all 8 business questions listed in Section 4</li>
+    <li>You must define appropriate primary keys, foreign keys, and data types for every table</li>
+    <li>Your database design decisions must be documented — include a data model diagram or description in your repository</li>
+    <li>All T-SQL scripts used to create the database schema must be committed to GitHub</li>
+    <li>All T-SQL analytical queries answering BQ-01 through BQ-08 must be committed to GitHub</li>
+  </ul>
+</div>
+
+<div class="scope-boundary">
+  <h3>5.3 SSIS ETL Package</h3>
+  <ul>
+    <li>Build an <strong>SSIS package</strong> that loads data from <code>BrightLearn_Raw_Data.csv</code> into your SQL Server database</li>
+    <li>The SSIS package must perform all necessary transformations — including data cleansing, type casting, deduplication, and business rule application — before loading data into the destination tables</li>
+    <li>The SSIS package file (<code>.dtsx</code>) must be committed to your GitHub repository</li>
+    <li>The package must be executable on a clean database without manual intervention</li>
+    <li>Any SSIS configurations (connection strings, file paths) must be parameterised so that the package can be run from any machine</li>
+  </ul>
+</div>
+
+<div class="scope-boundary">
+  <h3>5.4 Data Quality Report</h3>
+  <ul>
+    <li>Submit a written Data Quality Findings Report as a file in your GitHub repository</li>
+    <li>The report must list every data quality issue you discovered in the source file</li>
+    <li>For each issue, document: what the problem is, how many records are affected, and what decision you made to resolve it</li>
+    <li>This report demonstrates your ability to think critically about data before building on it</li>
+  </ul>
+</div>
+
+<div class="scope-boundary">
+  <h3>5.5 Analytical Queries</h3>
+  <ul>
+    <li>Write T-SQL queries that answer all 8 business questions (BQ-01 to BQ-08)</li>
+    <li>Queries must be saved as individual <code>.sql</code> files in your repository</li>
+    <li>Each query file must include a comment at the top referencing the business question it answers</li>
+    <li>Queries must return correct, meaningful results when executed against your populated database</li>
+  </ul>
+</div>
+
+<!-- SECTION 6 -->
+<h2>6. Technical Constraints</h2>
+<table class="data-table">
+  <tr>
+    <th>Tool / Technology</th>
+    <th>Requirement</th>
+  </tr>
+  <tr>
+    <td><strong>Database Engine</strong></td>
+    <td>Microsoft SQL Server 2019 or later (Express Edition is acceptable)</td>
+  </tr>
+  <tr>
+    <td><strong>Database Management</strong></td>
+    <td>SQL Server Management Studio (SSMS) — all SQL scripts must be compatible with T-SQL syntax</td>
+  </tr>
+  <tr>
+    <td><strong>ETL Tool</strong></td>
+    <td>SQL Server Integration Services (SSIS) — Visual Studio with SSIS extension or SQL Server Data Tools (SSDT)</td>
+  </tr>
+  <tr>
+    <td><strong>Version Control</strong></td>
+    <td>GitHub — all work must be version-controlled from Day 1</td>
+  </tr>
+  <tr>
+    <td><strong>Source Data</strong></td>
+    <td>The provided CSV file only — no additional data sources permitted</td>
+  </tr>
+  <tr>
+    <td><strong>Programming Languages</strong></td>
+    <td>T-SQL only for all database objects and queries. SSIS may use built-in transformations and Script Tasks (C# or VB.NET) where necessary</td>
+  </tr>
+  <tr>
+    <td><strong>AI Tools</strong></td>
+    <td><strong style="color:#C62828;">PROHIBITED.</strong> Use of any AI tool (ChatGPT, GitHub Copilot, Gemini, etc.) to write SQL, design schemas, or build SSIS packages is strictly forbidden. Violations will result in immediate disqualification. Live code walkthroughs will be conducted.</td>
+  </tr>
+</table>
+
+<!-- SECTION 7 -->
+<h2>7. Out of Scope</h2>
+<p>The following items are <strong>explicitly not required</strong> and will not be assessed:</p>
+<ul>
+  <li>Building any dashboard, visualisation, or front-end reporting interface</li>
+  <li>Real-time or streaming data pipelines</li>
+  <li>Cloud deployments (Azure, AWS, GCP)</li>
+  <li>Python, R, or any programming language other than T-SQL for data transformation</li>
+  <li>Data for periods outside January 2026 – June 2026</li>
+  <li>Inventory restocking workflow automation</li>
+</ul>
+
+<!-- SECTION 8 -->
+<h2>8. Acceptance Criteria</h2>
+<p>
+Your submission will be accepted and assessed when all of the following conditions are met:
+</p>
+<ol>
+  <li>The GitHub repository is public and accessible before the deadline</li>
+  <li>The repository contains a meaningful commit history spanning the full project period</li>
+  <li>A runnable SSIS package (<code>.dtsx</code>) is present in the repository</li>
+  <li>SQL scripts to create all database tables are present and syntactically correct</li>
+  <li>A normalised data model that can support all 8 business questions has been implemented</li>
+  <li>All 8 analytical queries (BQ-01 to BQ-08) are present and return correct results</li>
+  <li>A Data Quality Findings Report is present and covers all issues identified in the source data</li>
+  <li>A <code>README.md</code> explains the repository structure and execution order</li>
+  <li>During the live code walkthrough, the candidate can explain every design decision, query, and SSIS component without assistance</li>
+</ol>
+
+<!-- SECTION 9 -->
+<h2>9. Assessment Weighting</h2>
+<table class="data-table">
+  <tr>
+    <th>Area</th>
+    <th>Weight</th>
+    <th>What Is Assessed</th>
+  </tr>
+  <tr>
+    <td>Database Design (Schema &amp; Normalisation)</td>
+    <td><strong>20%</strong></td>
+    <td>Table design, keys, data types, normalisation quality</td>
+  </tr>
+  <tr>
+    <td>SSIS ETL Package</td>
+    <td><strong>30%</strong></td>
+    <td>Correct loading, transformations, error handling, executability</td>
+  </tr>
+  <tr>
+    <td>Data Quality Findings Report</td>
+    <td><strong>15%</strong></td>
+    <td>Completeness of issue identification and quality of decisions made</td>
+  </tr>
+  <tr>
+    <td>Analytical Queries (BQ-01 to BQ-08)</td>
+    <td><strong>25%</strong></td>
+    <td>Correctness of results, query quality, use of JOINs and aggregations</td>
+  </tr>
+  <tr>
+    <td>GitHub &amp; Version Control</td>
+    <td><strong>5%</strong></td>
+    <td>Commit frequency, commit message quality, repository organisation</td>
+  </tr>
+  <tr>
+    <td>Live Code Walkthrough</td>
+    <td><strong>5%</strong></td>
+    <td>Ability to explain all decisions and code independently</td>
+  </tr>
+  <tr>
+    <td><strong>TOTAL</strong></td>
+    <td><strong>100%</strong></td>
+    <td></td>
+  </tr>
+</table>
+
+<!-- SECTION 10 -->
+<h2>10. Submission Instructions</h2>
+<ol>
+  <li>Ensure your GitHub repository is set to <strong>Public</strong></li>
+  <li>Make your final commit before <strong>23:59 on Sunday 21 July 2026</strong></li>
+  <li>Final commit message must be: <code>submission: final — BrightLearn DE Exam complete</code></li>
+  <li>Send your GitHub repository URL to your facilitator via the designated submission channel before the deadline</li>
+  <li>Late submissions will be penalised as follows:</li>
+</ol>
+<table class="data-table" style="width:50%;">
+  <tr><th>Days Late</th><th>Penalty</th></tr>
+  <tr><td>1 day</td><td>-15 marks</td></tr>
+  <tr><td>2 days</td><td>-30 marks</td></tr>
+  <tr><td>3+ days</td><td>Maximum mark capped at 40%</td></tr>
+  <tr><td>No submission</td><td>0%</td></tr>
+</table>
+<p>Extension requests must be submitted in writing to your facilitator <strong>before</strong> the deadline with supporting documentation. No retroactive extensions will be granted.</p>
+
+<!-- SECTION 11 -->
+<h2>11. Academic Integrity Statement</h2>
+<div class="important-box">
+  <strong>By committing work to GitHub under your account, you confirm that:</strong>
+  <ul style="margin-top:8px;">
+    <li>All database design, SQL code, SSIS configuration, and written documentation is your own original work</li>
+    <li>You have not used any AI code-generation tool to produce any part of your submission</li>
+    <li>You can independently explain every component of your solution during the live walkthrough</li>
+    <li>You have not shared your solution with, or received code from, any other candidate</li>
+  </ul>
+  Violations of academic integrity will result in a mark of 0% and may result in further disciplinary action.
+</div>
+
+<!-- SIGNATURES -->
+<div class="signature-section">
+  <h2>12. Document Sign-Off</h2>
+  <p>This scope has been reviewed and approved by the following parties. By signing, each party confirms they have read, understood, and agreed to the contents of this document.</p>
+
+  <div class="sig-grid">
+    <div class="sig-block">
+      <div class="sig-line">
+        <strong>Lerato</strong><br />
+        Business Analyst<br />
+        Business Intelligence &amp; Analytics<br />
+        BrightLearn<br />
+        Date: 27 June 2026
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <div class="sig-line">
+        <strong>Ketro Sithole</strong><br />
+        Head of Data Engineering<br />
+        Technology &amp; Data Division<br />
+        BrightLearn<br />
+        Date: 27 June 2026
+      </div>
+    </div>
+
+    <div class="sig-block">
+      <div class="sig-line">
+        <strong>Rofhiwa</strong><br />
+        Chief Executive Officer<br />
+        Executive Division<br />
+        BrightLearn<br />
+        Date: 27 June 2026
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  BrightLearn — Technology &amp; Data Division &nbsp;|&nbsp;
+  Document Ref: BL-DE-EXAM-2026-07 &nbsp;|&nbsp;
+  Version 1.0 — FINAL &nbsp;|&nbsp;
+  CONFIDENTIAL: This document is intended solely for the named recipient. Unauthorised distribution is prohibited.
+</div>
+
+</body>
+</html>

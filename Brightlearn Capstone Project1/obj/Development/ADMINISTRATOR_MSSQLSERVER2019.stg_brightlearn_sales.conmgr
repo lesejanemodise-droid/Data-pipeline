@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADMINISTRATOR_MSSQLSERVER2019.stg_brightlearn_sales"
+  DTS:DTSID="{61600C51-96D6-4BC2-B102-441765D6BE3D}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=ADMINISTRATOR\MSSQLSERVER2019;Initial Catalog=stg_brightlearn_sales;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Brightlearn Capstone Project1-{61600C51-96D6-4BC2-B102-441765D6BE3D}ADMINISTRATOR\MSSQLSERVER2019.stg_brightlearn_sales;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
