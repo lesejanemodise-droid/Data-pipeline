@@ -463,7 +463,7 @@ BrightLearn-DE-Exam/
 
 # Author
 
-Data Engineering Candidate
+Data Engineering Modie
 
 BrightLearn Data Warehouse Build Assessment
 
